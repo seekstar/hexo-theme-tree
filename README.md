@@ -26,7 +26,8 @@ theme: tree
 
 **旧版**：无感升级，因为 themes 下的配置是继承 hexo config 的
 
-请复制粘贴下面默认配置到 `hexo` 根目录中的 `_config.yml` 文件中，后续可以根据自己需求更改配置
+请复制粘贴下面默认配置到 `hexo` 根目录中的 `_config.yml` 文件中(或者新建 `_config.tree.yml` 文件)，后续可以根据自己需求更改配置
+
 ```
 ########## The following are all optional #########
 ####### footer bar #####
@@ -56,8 +57,8 @@ links:
 
 ####### sidebar #####
 sidebar:
-    # name for left sidebar post list. ture: title name; false: file name
-    usePostTitle: ture
+    # name for left sidebar post list. true: title name; false: file name
+    usePostTitle: true
 
 ####### plug-in #####
 # optional, giscus comment
@@ -147,7 +148,13 @@ layout: "tags"
 ```
 tags: true
 ```
-
+如果想让 tags 页展示在一列，可以添加配置
+```
+style:
+    tags:
+        # support line, list; default list
+        display: line
+```
 ### categories 页
 在 `source` 路径下，与 `_posts` 文件夹平行，建立一个 `categories` 页
 
@@ -167,6 +174,13 @@ layout: "categories"
 修改 `hexo` 根目录中的 `_config.yml`，添加
 ```
 categories: true
+```
+如果想让 categories 页展示在一列，可以添加配置
+```
+style:
+    categories:
+        # support line, list; default list
+        display: line
 ```
 
 ## 2 文章树、目录树
@@ -261,7 +275,7 @@ $(document).ready(function () {
 - 小试牛刀，目前就搜索框和导航栏有文字
 ```
 # support language
-# default en， can select from [en, zh-Hans]
+# default en， can select from [en, zh-Hans, tr]
 language: zh-Hans
 ```
 
