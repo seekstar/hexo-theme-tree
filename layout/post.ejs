@@ -11,7 +11,10 @@
 	<% } %>
 
 	<span><%- config.author %></span>
-	<span><%- date(page.date, "YYYY-MM-DD HH:mm:ss") %></span>
+	<span>Posted: <%- date(page.date, "YYYY-MM-DD HH:mm:ss") %></span>
+  <% if (page.updated !== undefined) { %>
+    <span>Updated: <%- date(page.updated, "YYYY-MM-DD HH:mm:ss") %></span>
+  <% } %>
 
   <div id="article-categories">
     <% if (page.categories) { %>
